@@ -37,11 +37,11 @@ class Nyaa:
             user_uri = ""
 
         if page > 0:
-            r = requests.get("{}/{}?f={}&c={}_{}&q={}&p={}".format(
+            r = requests.get("{}/{}?f={}&c={}_{}&q={}&p={}s=seeders&o=desc".format(
                 url, user_uri, filters, category, subcategory, keyword,
                 page))
         else:
-            r = requests.get("{}/{}?f={}&c={}_{}&q={}".format(
+            r = requests.get("{}/{}?f={}&c={}_{}&q={}s=seeders&o=desc".format(
                 url, user_uri, filters, category, subcategory, keyword))
 
         r.raise_for_status()
